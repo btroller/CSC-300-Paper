@@ -1,0 +1,483 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage[hyphens]{url}
+\usepackage[normalem]{ulem}
+
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=false,allcolors=blue}
+\usepackage{hypcap}
+
+\usepackage[margin=0.93in]{geometry}
+%\usepackage[margin=1in]{geometry}
+
+\pagenumbering{roman}
+
+\usepackage{titlesec}
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsubsection.\arabic{paragraph}}
+
+\titleformat{\subsubsubsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@subsubsubsubsection{5}
+
+\makeatletter
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{10em}{5em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\begin{document}\sloppy
+
+\begin{titlepage}
+\title{The Ethics of Samsung Issuing Updates to Disable Charging on the Samsung Galaxy Note 7}
+
+\author{Benjamin Troller \\ Computer Science Major \\ \\ CPE 300}
+\date{\today}
+
+\clearpage\maketitle
+
+\begin{abstract}
+   In December 2016 and January 2017, Samsung issued updates to Samsung Galaxy Note 7 devices in the United States, disabling their ability to charge. This came after a several month long period during which Note 7 batteries were reported to occasionally combust during regular use. Was it ethical for Samsung to issue updates to prevent the Note 7 from charging?
+   
+   It can be argued that Samsung was acting in the best interest of the public when they protected their customers by issuing an update to prevent the use of a potentially faulty product. However, it can also be argued that they were crippling the functionality of users' private property, who likely understood the risks and made a decision to continue using the product. % The previous line is worded poorly. Try splitting into two sentences or doing something to make it read more clearly
+   This paper concludes that Samsung violated the Software Engineering Code of Ethics Tenet 2.03 by imposing a change on users without their permission. Because Samsung did not give the users any choice in whether their phone was disabled, they acted unethically.
+\end{abstract}
+
+\thispagestyle{empty}
+\end{titlepage}
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\twocolumn
+
+\section{Facts}
+
+%TODO: Cite more
+
+   The Samsung Galaxy Note 7 was announced on 2 August 2016 and released on 19 August 2016. By September 2016, roughly 2.5 million Note 7s had been distributed worldwide\cite{jamesVincentVerge}.
+   
+   On 31 August 2016, The Guardian published a report that Samsung was delaying shipments of the Note 7 for quality control testing\cite{guardian}. Up to this point, there had been reports that the phone would ``explode" while being charged, but Samsung had neither confirmed nor denied them\cite{yonhapnews}. Samsung announced an informal recall of the Note 7 on 2 September 2016, but switched to a formal recall on 15 September 2016 after a defect was found in batteries from a particular supplier\cite{recode}. These batteries could short-circuit and ignite unexpectedly.
+   
+   Samsung stopped using the known faulty batteries and substituted them with batteries from another supplier, Amperex Technology Limited, which they believed to be safe. The Note 7 was then rereleased with visually distinct packaging\cite{boxMarkedDifferent}\cite{greenBatteryIndicator}. Unfortunately, the batteries in these phones also had issues.
+   
+   Replacement Note 7s contained batteries with defects which could short-circuit and combust like to the original Note 7s\cite{anotherOne}. On 10 October 2016, Samsung requested that users turn off and stop using their Note 7 devices. The company began another massive recall effort, urging customers to return or exchange all Note 7s. This included the replacement models. They worked with all major US wireless carriers and retailers to halt sales.
+   
+   In late October 2016, Note 7 battery failure rates were estimated to be around 0.02 percent\cite{numbersOnFailureRates}.
+   
+   In December 2016, Samsung announced a forced update for all unreturned Note 7 devices in the United States\cite{samsungFullRecallAnnounce}\cite{facebookAutoInstallConfirmation}. This update would disable the phone's ability to charge in order to ``further increase participation" in the return and replacement programs.
+
+\section{Question}
+% Maybe refine to only ethical questions in the US specifically?
+Was it ethical for Samsung to issue updates to prevent the Samsung Galaxy Note 7 from charging?
+
+\section{Social Implications}
+% Definitely brush up this section. Look at suggestion given in proposal by TA
+	Some companies produce devices which install software updates without customer intervention\cite{guardianRevlovBricked}\cite{amazonEchoInstallsUpdatesAutomatically}\cite{computerworldWindows10AutoInstallsUpdates}. If a company controlling such devices were to decide that its customers were endangered by a device, the company could disable the device to protect its customers.\cite{guardianRevlovBricked}.
+	
+	The Consumer Product Safety Commission (CPSC) is a United States government agency responsible for coordinating and initiating recalls on a wide variety of consumer products\cite{CPSCFAQ}. The CPSC does not have authority to force an individual to give up or stop using a product they already own\cite{CPSCFAQ}. This includes issuing updates to disable devices deemed to be unsafe. In this way, some private companies have more power to enforce changes to products than the government agency usually charged with protecting consumer safety.
+	%This is in line with ideas of personal property, which form a large part of the backbone of our society\cite{}. 
+    
+	With this power, companies could make decisions about public safety without any input from the public or its elected officials. In some cases, individuals may choose to use devices with defects while understanding the risks associated with the device\cite{safetyStandardsBook}. Allowing companies to make these judgments of risk may lead to the shutting down of a device with a relatively small chance of failure. Surrendering control over privately owned devices to their manufacturers may result in devices being unnecessarily disabled. Companies now have more control over some aspects of consumer safety than government agencies like the CPSC do. Do we want to surrender that control to an organization which is not accountable to the public in some way?
+	
+	%Certainly no private company has a right to your personal propety\cite{somePropertyRightsSource}.
+	%Increasingly
+	
+		
+   %Traditionally, broad public health and safety decisions have been made by government\cite{}. There has been much debate about which measures are appropriate to protect public health and which are overly paternalistic or ill-conceived\cite{ncbiPaternalism}. Because these decisions are being made in government, citizens have some say over what decision is ultimately reached. Government sometimes works with businesses to achieve public health and safety goals, but government is typically in the driver's seat\cite{}. 
+   %However, if the private sector to begin making these decisions we would not have a direct way to influence them. Businesses could make their judgements, and we would have no direct recourse. This results in 
+
+   %Transparency is an key concept in business\cite{transparencyInBusiness}. It helps to secure the trust of consumers and ensure the accountability of a company. When dealing with a transparent company, users can make better-informed purchasing decisions. 
+
+   %We have trusted companies to keep our safety in mind in the past while designing a product. However, they have not historically made extreme decisions to change or disable a product without our consent after we take ownership of it. Allowing companies to make changes to products they no longer own could encourage blind trust in them and allow them to take control of personal property. For instance, a car manufacturer today may issue a recall for a specific vehicle to fix a faulty part. In this case, the owner of the car may take it to be fixed, but unless a compulsory recall is issued by a government, the owner may keep their vehicle unaltered.
+   
+   %However, if blind trust in companies to keep us safe becomes commonplace, we may give companies much more control over our lives than they currently have. For instance, a car manufacturer may create an update to a vehicle's software to limit speeds at a set value determined to be safe. Today, this manufacturer would need to get permission to install this update, which some owners very well may want. However, if given blind trust to keep us safe, they may release the update to all vehicles without requesting permission from any owner.
+
+\section{Literature Review}
+
+   \subsection{Argue Samsung Acted Ethically}
+   
+   \subsubsection{James Vincent: Everyone is still using their Galaxy Note 7 as Samsung fumbles its global recall}
+   
+      In an article for The Verge written before the update in question was released, James Vincent discusses the issues with Samsung's recall of the Note 7.\cite{jamesVincentVerge} He points to the update Samsung released in South Korea preventing the phone from charging more than 60\% as a ``band-aid," suggesting it is helpful and good measure to promote consumer safety\cite{jamesVincentVerge}. 
+   
+   \subsubsection{Verizon Statement}
+   
+      In an article for The Verge, Chris Welch reports on a statement by Verizon.\cite{verizonPressRelease} Verizon states that they will not release the update to disable charging until the holiday season is over because of ``the added risk [it] could pose to Galaxy Note 7 users that do not have another device to switch to." They continue by saying that they will not push an update which will make it impossible for some users to contact emergency services and family members in an emergency situation, but still announce that the update will be issued in early January. Verizon seems to argue that they should not incapacitate a customer's device at an inconvenient time, but still chooses to issue the update later on\cite{verizonPressRelease}.
+   
+   \subsection{Argue Samsung Acted Unethically}
+   
+   \subsubsection{Reddit User jalabi99}
+      Reddit user jalabi99 makes the argument that Note 7 users should expect complete ownership of their devices\cite{redditJalabi99ArgueUnethical}. He suggests that in most every case, consumers are responsible for their own well-being. Even if a recall is issued for a product they own, they are given the choice to return or exchange it. He then suggests that ``Either [he owns] the device that [he] purchased with [his] hard-earned dollars or [he doesn't]," implying that Samsung acted as if Note 7 users didn't actually own their devices\cite{redditJalabi99ArgueUnethical}.
+      
+      Jalabi99 then makes an analogy emphasizing how the handling of this situation would be considered unacceptable for most any other product. He compares it to a washing machine manufacturer disabling all washing machines instead of offering a repair service\cite{redditJalabi99ArgueUnethical}.
+      
+      %The Reddit user makes an analogy to purchasing a washing machine with a defect. He suggests that Samsung issuing an update to effectively break all existing Note 7s would be like a washing machine manufacturer ``[forcing] concrete down the water pipes not just to your house, but to every house in America."
+      
+   \subsubsection{Miguelina Betty}
+      As reported by Raymond Wong in Mashable, Miguelina Betty is the co-founder of the Facebook group ``Note 7 Alliance." She argues that Note 7 users should ultimately make the decision of whether to keep the phone\cite{mashableMiguelinaBetty}. `` I have not yet been convinced that my Note 7 is a danger...I am fully aware it is recalled," she argues. ``I am an adult and I choose to keep and use my Note 7."
+      
+      	Betty's argument is similar to jalabi99's argument discussed previously, but focuses more on the inconvenience of needing to find a replacement device. Betty considered the Note 7 to be the absolute best phone for her at the time. She didn't want to exchange her phone because she was already using the phone she wanted\cite{mashableMiguelinaBetty}.
+      
+
+\section{How the Software Engineering Code of Ethics Applies}
+
+   The IEEE/ACM Software Engineering Code of Ethics (SE Code of Ethics) claims in its preamble that it applies to ``anyone claiming to be or aspiring to be a software engineer."\cite{codeOfEthics} The SE Code of Ethics defines software engineers as those who ``\uline{contribute} by \uline{direct participation} ... to the ... \uline{development} ... of \uline{software systems}."\cite{codeOfEthics}
+   
+   \subsection{Definitions}
+   
+   	\subsubsection{Contribute}
+   	Contribute is defined as to ``Help to cause or bring about."\cite{oxfordDefineContritute}
+	
+	By this definition, Samsung would be contributing to the software development process if they helped \uline{cause it or bring it about}. By commissioning the update for the Note 7, they contributed to its development\cite{samsungModifiedAndroid}.
+	
+	\subsubsection{Direct Participation}
+	Direct is defined as ``marked by absence of an intervening agency."\cite{merriamDefineDirect} ``Participate" is defined as ``to take part."\cite{merriamDefineParticipate}
+	
+	By these definitions, Samsung would be directly participating in the software development process if a Samsung employee was \uline{developing the software}. Samsung did this by having employees internally develop the Note 7 software update\cite{mashableMiguelinaBetty}.
+	
+	\subsubsection{Development}
+      Develop is defined as ``to create or produce especially by deliberate effort over time."\cite{merriamDefineDevelop}
+	
+	By this definition, Samsung would be participating in development if they \uline{took part in the process of creating the software update} for the Note 7, which they did\cite{samsungModifiedAndroid}.
+	
+	\subsubsection{Software Systems}
+	\label{codeApplies.SoftwareSystems}
+	%``Software" is defined by Merriam-Webster as ``something used or associated with and usually contrasted with hardware, such as programs for a computer."\cite{merriamDefineSoftware}
+	Operating system is defined as ``software that communicates with the hardware and allows other programs to run."\cite{merriamDefineOperatingSystem} ``System" is defined as ``a regularly interacting or interdependent group of items forming a unified whole."\cite{merriamDefineSystem}
+	The Android operating system was estimated in 2010 to consist of over 12 million lines of source code\cite{gubatronEstimateAndroidSourceSize} This extraordinarily large project is separated into many subsystems\cite{googleBreakdownAndroidSubsystems}. It can then be considered a system composed of software subsystems, and so \uline{a software system}.
+	
+   \subsection{Conclusion}
+   \label{SamsungIsSEConclusion}
+   Updates to operating systems are modifications made to the software system which makes up the operating system. Samsung explicitly ordered changes to be made. Because they contributed through direct participation to the development of a software system, Samsung can be considered a software engineer\cite{codeOfEthics}. Because it applies to software engineers, the SE Code of Ethics applies to Samsung.
+   
+   
+   %Updates to operating systems are modifications to the software that makes up and operating system. Development is defined by Merriam-Webster as ``the ... process ... of developing," and develop is defined by Merriam-Webster as ``to create or produce especially by deliberate effort over time."\cite{merriamDefineDevelopment}\cite{merriamDefineDevelop} Software engineers can then be considered people who contribute directly to the process of creating software deliberately over time.
+   
+   %The employees at Samsung who wrote the update for the Note 7 to disable charging deliberately developed the update. Therefore, they can be considered software engineers. Consequently, Samsung can be considered a software developer as their employer.
+   
+   %According to the ACM Software Engineering Code of Ethics, ``software engineers shall adhere to [itself]." Therefore, it applies to Samsung.
+
+\section{Analysis}
+
+%\subsection{SE Code Tenet 1.02}
+%{\bf TODO: Choose only one tenet from section 1 of the code of ethics. We can only have 1.}
+\iffalse
+%-------------------------------------------------------------------------------------------
+\subsection{SE Code Tenet 1.02}
+%Cooperate in Efforts to Address Matters of Grave Public Concern
+
+   \subsubsection{Statement of Tenet}
+      Tenet 1.02 of the SE Code states that software engineers shall, as appropriate:
+      
+      \begin{quote}
+		\uline{Moderate} the \uline{interests} of the \uline{software engineer} ... and the \uline{users} with the \uline{public good}.\cite{codeOfEthics}
+      \end{quote}
+   
+   \subsubsection{Domain Specific Definitions}
+   
+      \subsubsubsection{Moderate}
+      Moderate is defined as to ``hold or keep within limits."\cite{audioenglishDefineModerate} In this case, to moderate would be to \uline{keep the interests of the software engineer and the users within limits with respect to the public good}.
+      
+      \subsubsubsection{Interests}
+      Interest is defined as ``A stake or involvement in an undertaking."\cite{oxfordDefineInterest} In this case, the interests of the software engineer and users are what they stand to lose or gain as a result of this update being issued or not being issued. In the user's case, they stand to lose their device and gain their assured physical safety. In Samsung's case, they stand to lose the happiness of some customers and gain the assurance that they will no longer be liable for damages caused by defective Note 7 batteries.
+      
+      \subsubsubsection{Software Engineer}
+      As derived in \S\ref{SamsungIsSEConclusion}, Samsung can be considered the software engineer in this case.
+      
+      \subsubsubsection{Users}
+      The users in this case are the users of Note 7 devices.
+      
+      \subsubsubsection{Public Good}
+   
+   \subsubsection{Domain Specific Rule}
+   % TODO: finish this
+      In the domain of this question, tenet 1.05 requires Samsung to cooperate in efforts to address matters of grave public concern caused by software on the Note 7.
+  
+   \subsubsection{Analysis}
+      \subsubsubsection{etc}
+      \subsubsubsection{Conclusion}
+\fi      
+   
+\iffalse      
+\subsection{SE Code Tenet 1.05}
+%Cooperate in Efforts to Address Matters of Grave Public Concern
+
+   \subsubsection{Statement of Tenet}
+      Tenet 1.05 of the SE Code states that software engineers shall, as appropriate:
+      
+      \begin{quote}
+		\uline{Cooperate} in efforts to address \uline{matters of grave public concern} \uline{caused} by \uline{software} ...\cite{codeOfEthics}
+      \end{quote}
+   
+   \subsubsection{Domain Specific Definitions}
+   
+      \subsubsubsection{Cooperate}
+      Cooperate is defined as ``to act or work together with ... others for a common purpose."\cite{collinsDefineCooperate} Others in this case include the CPSC, wireless carriers, and Note 7 users. Samsung would be cooperating with them if Samsung worked together with the CPSC, wireless carriers, and Note 7 users for the common purpose of ensuring Note 7 devices were safe.
+      
+      \subsubsubsection{Matters of Grave Public Concern}
+       {\bf CITE/FINISH}
+      
+      Public is defined as ``Of ... the people as a whole."\cite{oxfordDefinePublic} Concern is defined as ``to be a care, trouble, or distress to."\cite{oxfordDefineConcern} Grave is defined as ``meriting serious consideration."\cite{merriamDefineGrave} Significant is defined as ``worrying because of possible danger or risk."\cite{oxfordDefineSerious} Therefore, a grave public concern is a care, trouble, or distress to people as a whole which merits consideration because of possible danger or risk to people.
+      
+      People generally consider their physical safety to be important. They dislike physical pain. This can be considered a care about the preservation of their physical safety. This care is based in concern for potential danger to their physical bodies. Therefore, this concern could be considered a grave public concern because it is a care to people as a whole which merits consideration because of possible danger.
+      
+	Note 7 devices caused damages including catching a vehicle on fire and potentially burning down a house\cite{vergeDamagesCaused}. While the device didn't burst into flames, it did became hot enough to initiate fires in through direct contact with a surface\cite{cnetHotelDamages}. People in general, not only Note 7 owners, might fear this because of the risk to their physical safety, not just the safety of the Note 7 owners.
+      
+      \subsubsubsection{Cause}
+      A cause is defined as ``something that brings about an effect or result."\cite{merriamDefineCause} The operating system allowed the Note 7s to charge and run. Without the operating system, there would have been no risk involving the battery because the battery would not be charged. Therefore, we can consider the \uline{operating system to be a cause} of the risk to physical safety of people in general.
+      
+      \subsubsubsection{Software}
+      As explained above in \S\ref{codeApplies.SoftwareSystems}, we can consider the operating system which Note 7s ran to be software.
+   
+   \subsubsection{Domain Specific Rule}
+   % TODO: finish this
+  
+   \subsubsection{Analysis}
+      \subsubsubsection{etc}
+      \subsubsubsection{Conclusion}
+\fi
+      
+\subsection{SE Code Tenet 1.06}
+%Cooperate in Efforts to Address Matters of Grave Public Concern
+
+   \subsubsection{Statement of Tenet}
+      Tenet 1.06 of the SE Code of Ethics states that software engineers shall, as appropriate:
+      
+      \begin{quote}
+		\uline{Be fair} and avoid \uline{deception} in all \uline{statements}, particularly public ones, concerning \uline{software} or related documents, methods and tools.\cite{codeOfEthics}
+      \end{quote}
+   
+   \subsubsection{Domain Specific Definitions}
+   
+      \subsubsubsection{Be Fair}
+      Fair is defined as ``In a manner that is honest."\cite{merriamDefineFair} Honest is defined as  Samsung would have been fair if they were \uline{honest} in their statements.
+      
+      \subsubsubsection{Deception}
+      Deception is defined as ``the act of making someone believe something that is not true."\cite{merriamDefineDeception} Samsung would've avoided deception if they \uline{avoided making people believe something that wasn't true}. %This goes beyond not lying -- they have to make sure that they're clear in their communication.
+      
+      \subsubsubsection{Statements}
+	Statement is defined as ``something written or said in a formal way."\cite{merriamDefineStatement} Statements which Samsung made would then include \uline{press releases and announcements}.
+      
+      \subsubsubsection{Software}
+	As derived in \S\ref{codeApplies.SoftwareSystems}, \uline{the operating system which Note 7s ran} can be considered software.
+   
+   \subsubsection{Domain Specific Rule}
+   % TODO: finish this
+      In the domain of this question, SE Code of Ethics Tenet 1.05 can be rewritten as:
+      
+      \begin{quote}
+      \uline{Samsung} shall \uline{be honest} and \uline{avoid making people believe something that is not true} in all \uline{press releases and announcements made concerning the Note 7 software update}. 
+      \end{quote}
+  
+   \subsubsection{Analysis}
+   \label{1.06 Analysis}
+   
+      \subsubsubsection{Be Honest}
+      \label{Be Honest}
+      On 9 December 2016, Samsung announced in a press release that they would attempt to ``further increase participation" of customers in their Refund and Exchange Program by issuing the software update to disable charging on Note 7 devices\cite{samsungNewsroomUpdateAnnoucement}. They stated in this press release that the update would ``be released starting on December 19$^{\textrm{th}}$ and ... distributed within 30 days."\cite{samsungNewsroomUpdateAnnoucement} However, the first update in the United States was distributed by US Cellular on 15 December, four days before the announced release date\cite{pocketnowNoLongerWorkMessageUSCellular}. While Samsung did not have control over when US Cellular would release the update, they did fail to correctly announce the period over which the updates would be issued\cite{samsungModifiedAndroid}.
+      
+      A capture of Samsung's web page about the US Note 7 recall from 9 December 2016 is available through Internet Archive's Wayback Machine\cite{waybackmachineRecallNoticeDec9}. This web page makes the claim that the updates would be ``released starting on December 19$^{\textrm{th}}$."\cite{waybackmachineRecallNoticeDec9} This is the same incorrect date given in the press release from 9 December\cite{samsungNewsroomUpdateAnnoucement}.
+      
+      In these two cases, Samsung made false claims publicly in formal communications\cite{waybackmachineRecallNoticeDec9}\cite{samsungNewsroomUpdateAnnoucement}\cite{pocketnowNoLongerWorkMessageUSCellular}. Samsung may not have intended to give incorrect dates, but they were incorrect all the same. Therefore, by making false claims, Samsung failed to be honest in a press release and an announcement concerning the Note 7 software update.
+      
+      \subsubsubsection{Avoid Making People Believe Something That Is Not True}
+      After the update was released to Note 7 users on the US Cellular network, Samsung failed to change their US Note 7 recall web page with updated information\cite{waybackmachineSamsungChangedRecallNotiec}. They did not alter the web page until on 22 January 2017, more than a month after US Cellular first issued the update.\cite{waybackmachineSamsungChangedRecallNotiec}. This alteration changed the notice to say that ``a software update [had] been released," but did not correct the inaccurate date given before\cite{waybackmachineSamsungChangedRecallNotiec}. All other wireless carriers had also released the update by that time. Because Samsung never corrected their statement, they further failed to prevent people from believing the false claim made in multiple statements regarding the Note 7 software update's release date. Therefore, Samsung did not avoid making people believe the incorrect statement about the update's release date that was not true.
+      
+      \subsubsubsection{Conclusion}
+      Samsung failed to honestly report the date after which the Note 7 software update would be issued. They further failed to correct these errors on their public web page about the recall, which was intended as a source of information about the update for the users\cite{waybackmachineSamsungChangedRecallNotiec}. Therefore, Samsung violated the domain specific rule derived from SE Code Tenet 1.06 and acted unethically.
+
+%-------------------------------------------------------------------------------------------
+\subsection{SE Code Tenet 2.03}
+%Use Property of Client only as Authorized
+
+\subsubsection{Statement of Tenet}
+Tenet 2.03 of the SE Code of Ethics states that software engineers shall, as appropriate:
+
+\begin{quote}
+\uline{Use} the \uline{property} of a \uline{client} or employer ... with the \uline{client's or employer's} knowledge and \uline{consent}.\cite{codeOfEthics}
+\end{quote}
+
+\subsubsection{Domain Specific Definitions}
+
+\subsubsubsection{Use}
+Use is defined as ``To put into service or apply for a purpose."\cite{wordnikDefineUse}
+% Reword
+Samsung can be considered to have used their customers' Note 7 devices if they put the devices into service with the purpose of retrieving and installing updates automatically\cite{bgrCarriersRecallMessages}. These updates include the update which disabled charging. Therefore, by \uline{automatically installing updates}, they used their customers Note 7 devices.
+
+\subsubsubsection{Property}
+% They may legally have belonged to the carriers
+Property is defined as ``A thing or things belonging to someone."\cite{oxfordDefineProperty} 
+
+The Note 7s purchased by Samsung's customers no longer belonged to Samsung, instead belonging to the customers. Therefore, \uline{their customers' Note 7s} can be considered their customers' property.
+
+%Mirriam-Webster defines property as ``something owned or possessed."\cite{merriamDefineProperty}
+
+%By this definition, the Note 7 devices owned by Samsung's customers can be considered the customers' property.
+
+\subsubsubsection{Client}
+\label{Define Client}
+A client is defined to be ``\uline{a customer}."\cite{dictionaryDefineClient}
+
+By this definition, Samsung's customers who purchased Note 7 devices can be considered Samsung's clients.
+
+\subsubsubsection{Consent}
+Consent is defined as ``\uline{Permission for something to happen} or agreement to do something."\cite{oxfordDefineConsent}
+
+\subsubsection{Domain Specific Rule}
+Using these definitions, SE Code of Ethics Tenet 2.03 can be rewritten as: 
+
+\begin{quote}
+\uline{Samsung} shall \uline{automatically install updates} on \uline{Note 7 devices owned by its customers} only with \uline{its customers'} knowledge and \uline{permission}.
+\end{quote}
+
+\subsubsection{Analysis}
+
+\subsubsubsection{Automatically Install Updates}
+%Samsung chose to issue updates which would automatically install themselves on Note 7 devices.
+
+It was possible for Note 7 users to install software which could prevent their devices from receiving any future software updates\cite{youtubeGuideDisableUpdates}. These included the updates limiting and disabling charging capabilities. However, this alteration was not recommended by Samsung or wireless carriers. A Verizon spokesperson suggested that those using Note 7s with modified software were posing ``a safety risk to [themselves] and those around them."\cite{fortuneCustomersWontSurrenderPhones}
+
+Samsung chose to automatically install the update which disabled charging\cite{youtubeGuideDisableUpdates}. Regular users who didn't actively avoid the update had no choice but to install it.
+
+\subsubsubsection{Customers' Knowledge}
+\label{sec:Analysis.2.03.Analysis.Customers' Knowledge}
+%Samsung attempted to notify customers of their plans and coordinated with carriers to better inform customers. 
+
+Samsung made messages available on their website about how a software update would be released to prevent Note 7s from charging\cite{samsungFullRecallAnnounce}. They worked with the Consumer Product Safety Commission when organizing the Note 7 recall, but there was no notification about the battery disabling update on the CPSC webpage about the recall\cite{CPSC}. However, there was a link to Samsung's webpage about the recall\cite{samsungFullRecallAnnounce}.
+
+All wireless carriers attempted to notify customers using Note 7s of when the update would be issued. It was common for wireless carriers to send text messages to their users\cite{bgrCarriersRecallMessages}. For instance, US Cellular sent text messages to Note 7 users on their network, notifying users that an update would be issued to prevent their devices from charging. The message concluded with ``THE PHONE WILL NO LONGER WORK."\cite{pocketnowNoLongerWorkMessageUSCellular}
+
+When the update was issued to a Note 7, a message was displayed to the user which explained that the phone would no longer be able to charge and ``NO LONGER WORK AS A MOBILE DEVICE."\cite{youtubeKillUpdateScreenshots}
+
+Samsung attempted to inform customers of the updates they would issue for the Note 7. The many notifications from Samsung and wireless carriers, along with media coverage of the issue, were enough to encourage roughly 93\% of Note 7 users to return their devices by mid-December of 2016\cite{bgrCarriersRecallMessages}. \S\ref{1.06 Analysis} discusses a discrepancy between Samsung's given date and the actual date on which the update would be released. However, customers would still have known about the update at least a week before it was issued\cite{pocketnowNoLongerWorkMessageUSCellular}. This suggests that Samsung's customers did have knowledge of the battery disabling updates.
+
+\subsubsubsection{Customers' Permission}
+\label{sec:Analysis.2.03.Analysis.Customers' Permission}
+% Look at it from the paternalistic angle
+When Samsung announced that they would release an update to disable charging on Note 7s, they did not ask for input from users. Their announcement was not a question or prompt, but a statement\cite{samsungFullRecallAnnounce}. Samsung's customers did not get the opportunity to consent to the update.
+
+In the United States, this decision wasn't made for Samsung by an authority. The recalls they initiated were performed voluntarily, not because of a demand from the Consumer Product Safety Commission\cite{CPSC}. All literature cited in this paper suggests that Samsung decided on its own to issue the update.
+
+%Some customers who wanted to keep their Note 7s took issue with this decision. Reddit user jalabi99 was a part of the community of Note 7 owners who wanted to keep their devices\cite{redditJalabi99ArgueUnethical}. 
+
+\subsubsubsection{Conclusion}
+Samsung used their customers' Note 7 devices by automatically installing updates on them. They did this with Note 7 owners' knowledge, but without their permission.
+
+Because Samsung did not get the permission of Note 7 owners to automatically install updates on their devices, Samsung violated the domain specific rule formulated from SE Code Tenet 2.03. Therefore, Samsung acted unethically.
+
+%-------------------------------------------------------------------------------------------
+\subsection{SE Code Tenet 3.01}
+%Tradeoffs Should be Accepted by Client
+
+   \subsubsection{Statement of Tenet}
+      Tenet 3.01 of the SE Code of Ethics states that software engineers shall, as appropriate:
+      
+      \begin{quote}
+         Strive for high quality, acceptable cost and a reasonable schedule, ensuring \uline{significant tradeoffs} are \uline{clear} to and \uline{accepted} by the employer and the \uline{client}, and are available for \uline{consideration} by the \uline{user} and the public.\cite{codeOfEthics}
+      \end{quote}
+   
+   \subsubsection{Domain Specific Definitions}
+      
+      \subsubsubsection{Significant Tradeoffs}
+      Significant is defined as ``very large or \uline{noticeable}."\cite{macmillanDefineSignificant} By this definition, the Note 7 update would be significant if the changes it made were noticeable to Note 7 users. 
+      
+      Tradeoff is defined as ``A balance between two desirable but incompatible features."\cite{oxfordDefineTradeoff} A balance between the protection of customer safety and the ability of a potentially defective device to continue functioning normally could then be considered a tradeoff.
+      %Samsung made a choice between two desirable but incompatible possibilities -- Note 7s being able to charge and Note 7s' batteries not short-circuiting. According to the definition, the decision to disable charging of Note 7 devices involved a tradeoff.
+      
+      The inability of Note 7s to charge was certainly noticed by Note 7 users. Therefore, \uline{the balance made between protecting customer safety and allowing Note 7s to function normally} can be considered a significant tradeoff.
+      %The decision Samsung made between ensuring customer safety by disabling charging on Note 7s and allowing them to function normally was then noticeable and 
+      %Therefore, because the change the update made was both noticeable and a tradeoff, we can consider decisions about removing the charging capability to ensure customer safety to be 
+      
+      \subsubsubsection{Clear}
+	Clear is defined as ``plain or evident to the mind..."\cite{freeDefineClear} The tradeoffs of the update could be considered clear to users if they \uline{understood} what the update would do.
+      
+      %Cambridge Dictionary defines clear as ``\uline{easy to understand}, hear, read, or see."\cite{cambridgeDefineClear} By this definition, the tradeoffs Samsung made in the update would have been clear if they had been easy for Note 7 owners to understand.
+      
+      \subsubsubsection{Accepted}
+      Accept is defined as ``\uline{to give ... approval to}."\cite{merriamDefineAccept} By this definition, the update would have been accepted by Note 7 owners if they approved it before it was installed on their devices.
+      
+      \subsubsubsection{Client}
+      As discussed in \S\ref{Define Client}, client is defined as ``a customer"\cite{dictionaryDefineClient}. Owners of Note 7 devices can be considered \uline{Samsung's customers}.
+      
+      \subsubsubsection{Consideration}
+      Consideration is defined as ``\uline{a ... reflection}."\cite{dictionaryDefineConsideration} By this definition, Note 7 owners would have been able to consider the update if they were given the opportunity to reflect on it.
+      
+      \subsubsubsection{User}
+      The users of these devices were the Note 7 owners, so we can refer to them as the same \uline{customers} mentioned in the definition of the term ``client".
+   
+   \subsubsection{Domain Specific Rule}
+   Using these definitions, SE Code of Ethics Tenet 3.01 can be rewritten as:
+   
+   \begin{quote}
+	\uline{Samsung} shall ensure that \uline{the balance between protecting customer safety and allowing Note 7s to function normally} is \uline{understood} and \uline{approved} by \uline{their customers}, and is available for \uline{reflection on} by their \uline{customers}.
+   \end{quote}
+      %In the domain of this question, tenet 3.01 requires Samsung to ensure that significant tradeoffs about the operating system of the Note 7 are made clear to its customers and accepted by them.
+  
+   \subsubsection{Analysis}
+   
+      \subsubsubsection{Understood by Customers}
+   	% Draw from Knowledge section here
+	As discussed in \S\ref{sec:Analysis.2.03.Analysis.Customers' Knowledge}, Samsung and wireless carriers sent many messages about the update to Note 7 users\cite{samsungFullRecallAnnounce}\cite{CPSC}\cite{bgrCarriersRecallMessages}\cite{pocketnowNoLongerWorkMessageUSCellular}\cite{youtubeKillUpdateScreenshots}. These messages included information about how Note 7 devices were dangerous, so we can assume that customers knew that the update would protect their safety at the expense of their device's ability to work normally\cite{bgrCarriersRecallMessages}. Therefore, we can conclude that they understood the changes made to the balance between protecting customer safety and allowing Note 7s to work normally.
+      
+      \subsubsubsection{Approved by Customers}
+      As discussed in \S\ref{sec:Analysis.2.03.Analysis.Customers' Permission}, Samsung did not seek or get their customers' permission to install this update on the customers' Note 7s\cite{samsungFullRecallAnnounce}. The update was announced to customers, who then received it when their carrier issued it. Their customers had no choice in the matter. We can conclude that Samsung did not get customers' approval for changes made to the balance between protecting customer safety and allowing Note 7s to work normally.
+      
+      \subsubsubsection{Available for Reflection On By Customers}
+      Samsung first announced the Note 7 software update on 9 December 2016\cite{samsungNewsroomUpdateAnnoucement}. There was slightly less than a week before the first updates to Note 7s were issued by US Cellular on 15 December 2016\cite{vergeFirstDisabledPhones}. Verizon customers received the update after all other carriers' customers on 5 January 2017, nearly a month after Samsung announced it\cite{verizonPressRelease}.
+      
+      In all cases, customers had at least six days to reflect on the update. Therefore, we can conclude that Samsung did give their customers the opportunity to reflect on the changes made to the balance between customer safety and allowing Note 7s to work normally.
+      
+      \subsubsubsection{Conclusion}
+      Samsung did ensure that the tradeoffs made in the update to disable charging were understood and available for reflection on by their customers\cite{samsungFullRecallAnnounce}\cite{samsungNewsroomUpdateAnnoucement}\cite{verizonPressRelease}. However, the tradeoffs were not approved by their customers\cite{samsungFullRecallAnnounce}. Therefore, Samsung acted unethically by violating the domain specific rule derived above from SE Code Tenet 3.01.
+      
+      
+%-------------------------------------------------------------------------------------------
+
+\subsection{Conclusion}
+Samsung acted as a software engineer because they developed and released an update to the operating system of the Note 7. By the SE Code of Ethics, they can be considered a software engineer.
+
+Samsung was found to have violated SE Code of Ethics Tenet 1.06 because they published an incorrect information about when the update would be released and failed to correct it. They were also found to have violated Tenet 2.03 because they did not get the permission of Note 7 owners before installing the update on their devices. Lastly, Samsung was found to have violated Tenet 3.01 because they did not get the tradeoffs associated with the update approved by their users.
+
+Samsung may have acted ethically in many respects, but they did violate the tenets listed here. Therefore, Samsung acted unethically by issuing updates for the Note 7 to prevent it from charging.
+
+\section{Acknowledgments}
+
+Thanks to Gracie Ponomaroff, Connor Alvin, Ashish Sethi, Owen Kehlenbeck, and Ishan Pandey for reviewing and suggesting edits on this paper.
+
+\nocite{*}
+
+\onecolumn
+\newpage
+\addcontentsline{toc}{section}{References}	
+\bibliographystyle{acm}
+\bibliography{Bibli}
+\end{document}
